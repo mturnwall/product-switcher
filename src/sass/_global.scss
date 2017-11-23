@@ -1,8 +1,10 @@
 
 .wrapper {
+    @include font-size(14);
+    font-family: $font-family-sans;
     margin: 20px auto;
     max-width: 1200px;
-    font: 12px/1.2 Helvetica, Arial, sans-serif;
+
 }
 .prod-tabs {
     display: grid;

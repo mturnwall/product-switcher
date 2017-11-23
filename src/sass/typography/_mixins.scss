@@ -1,0 +1,17 @@
+/// Generate a font size based on rem fonts with a fallback for older browsers
+/// @param {Number} $actual - the actual font size the text should be
+/// @param {Number} $relative ($font-size-base) - number to divide $actual by to find the rem value
+///
+/// @requires {function} get-relative-font-size
+/// @requires $font-size-base
+///
+/// @group fonts
+///
+/// @example scss
+///  @include fontSize(18)
+///  // using a $font-size-base of 14 generates
+///  // font-size: 129%
+///  // font-size: 1.28571rem
+@mixin font-size($actual, $relative: $font-size-base) {
+    font-size: get-relative-font-size($actual, $relative, 'rem');
+}
