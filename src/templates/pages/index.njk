@@ -1,11 +1,51 @@
 {% extends "default.njk" %}
-{% block title %}My Cool Site{% endblock %}
+{% block title %}RA Product Switcher{% endblock %}
 
 {% block content %}
-<h1>Testing the Server</h1>
-This is a file with this {{ hello }}
-    <p>hope this works!!</p>
-    <p>
-        <a href="/product_page.html">Go to product page --></a>
-    </p>
+    <main class="wrapper">
+        <div class="prod-switcher">
+            <div class="prod-tabs">
+                <div class="prod-tabs__group prod-tabs__group--windows">
+                    <button class="prod-tabs__tab" data-prod-type="window">Double-hung</button>
+                    <button class="prod-tabs__tab" data-prod-type="window">Slider</button>
+                    <button class="prod-tabs__tab" data-prod-type="window">Casement</button>
+                    <button class="prod-tabs__tab" data-prod-type="window">Hopper</button>
+                    <button class="prod-tabs__tab" data-prod-type="window">Awning</button>
+                </div>
+                <div class="prod-tabs__group prod-tabs__group--doors">
+                    <button class="prod-tabs__tab" data-prod-type="door">Entry</button>
+                    <button class="prod-tabs__tab" data-prod-type="door">Hinged Patio</button>
+                    <button class="prod-tabs__tab" data-prod-type="door">Sliding Patio</button>
+                </div>
+            </div>
+
+            <section class="prod-tab">
+                <div class="prod-tab__image">
+                    <img src="http://placehold.it/400" alt="">
+                </div>
+
+                <div class="prod-tab__body">
+                    <h1 class="prod-tab__title">Double-hung Windows</h1>
+                    <p class="prod-tab__description">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium assumenda, blanditiis commodi consequuntur dolor dolorem dolorum error et illum ipsam, labore magnam numquam odio quas quibusdam quis, rem repellat voluptatibus!
+                    </p>
+
+                    <div class="prod-tab__options">
+                        <h2 class="prod-materials__title">Popular Materials</h2>
+                        <div class="prod-materials">
+                            <button class="prod-materials__material">Fiberglass</button>
+                            <button class="prod-materials__material">Wood</button>
+                            <button class="prod-materials__material">Composite</button>
+                            <button class="prod-materials__material">Vinyl</button>
+                            <button class="prod-materials__material">Aluminum</button>
+                        </div>
+                        <h3 class="prod-materials__subtitle">Fiberglass</h3>
+                        <p class="prod-materials__description">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque consequuntur, cumque debitis dicta dolor doloremque et ex fugit illo ipsa ipsum laudantium maxime mollitia obcaecati qui recusandae rem sunt voluptate.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
 {% endblock %}
