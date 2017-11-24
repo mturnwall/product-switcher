@@ -1,8 +1,43 @@
 .prod-materials {
+    margin-top: 20px;
 
     &__list {
         display: grid;
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: repeat(5, 70px);
         grid-gap: 10px;
+        margin-bottom: 20px;
+    }
+    &__material {
+        @include reset-button;
+        @include font-size(14);
+        text-align: center;
+        cursor: pointer;
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: 9px;
+            border: 1px solid #c9c9c9;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            transition: transform 300ms $easeOutBack;
+        }
+        &.selected {
+
+            &::after {
+                transform: scale(1.2);
+            }
+        }
+    }
+    &__icon {
+        display: block;
+        border-radius: 50%;
+        margin: 0 auto 15px auto;
+    }
+    &__title {
+        @include heading-2;
     }
 }

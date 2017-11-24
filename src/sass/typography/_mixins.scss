@@ -15,3 +15,14 @@
 @mixin font-size($actual, $relative: $font-size-base) {
     font-size: get-relative-font-size($actual, $relative, 'rem');
 }
+
+@mixin heading() {
+    @include font-size(24);
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+@mixin heading-2() {
+    @include font-size(18);
+    margin-bottom: 5px;
+}

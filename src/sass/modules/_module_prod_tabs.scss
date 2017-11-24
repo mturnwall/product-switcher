@@ -1,0 +1,55 @@
+.prod-tabs {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    position: relative;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: 2px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #00467c;
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 4px;
+        left: 0;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 5px 8.7px 5px;
+        border-color: transparent transparent #00467c transparent;
+        transform: translate3d(58px, 0, 0);
+        transition: transform 300ms $easeOutCirc;
+
+    }
+    &__group {
+        display: grid;
+
+        &--windows {
+            grid-template-columns: repeat(5, 1fr);
+            grid-column: 1 / 6;
+        }
+        &--doors {
+            grid-column: 7 / -1;
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+    &__tab {
+        border: 1px solid #ccc;
+        border-right: 0;
+        background: #fff;
+        display: inline-block;
+        margin: 0;
+        height: 50px;
+
+        &:last-child {
+            border-right: 1px solid #ccc;
+        }
+    }
+}

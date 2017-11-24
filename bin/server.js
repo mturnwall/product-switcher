@@ -56,6 +56,7 @@ async function startServer(options = []) {
             files.forEach(fileName => {
                 app.get(`/${fileName.replace('njk', 'html')}`, function(req, res) {
                     const data = getDataFile(fileName);
+                    console.log(data);
                     return res.render(fileName, data);
                 });
             });

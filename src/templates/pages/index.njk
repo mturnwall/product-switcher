@@ -4,21 +4,7 @@
 {% block content %}
     <main class="wrapper">
         <div class="prod-switcher">
-            <div class="prod-tabs">
-                <div class="prod-tabs__group prod-tabs__group--windows">
-                    <button class="prod-tabs__tab" data-prod-type="window">Double-hung</button>
-                    <button class="prod-tabs__tab" data-prod-type="window">Slider</button>
-                    <button class="prod-tabs__tab" data-prod-type="window">Casement</button>
-                    <button class="prod-tabs__tab" data-prod-type="window">Hopper</button>
-                    <button class="prod-tabs__tab" data-prod-type="window">Awning</button>
-                </div>
-                <div class="prod-tabs__group prod-tabs__group--doors">
-                    <button class="prod-tabs__tab" data-prod-type="door">Entry</button>
-                    <button class="prod-tabs__tab" data-prod-type="door">Hinged Patio</button>
-                    <button class="prod-tabs__tab" data-prod-type="door">Sliding Patio</button>
-                </div>
-            </div>
-
+            <prod-tabs :products="products"></prod-tabs>
             <div class="prod-tab">
                 <section class="prod-tab__main">
                     <h1 class="prod-tab__title">Double-hung Windows</h1>
@@ -36,11 +22,26 @@
                     <h2 class="prod-tab__subtitle">Popular Materials</h2>
                     <section class="prod-materials">
                         <div class="prod-materials__list">
-                            <button class="prod-materials__material">Fiberglass</button>
-                            <button class="prod-materials__material">Wood</button>
-                            <button class="prod-materials__material">Composite</button>
-                            <button class="prod-materials__material">Vinyl</button>
-                            <button class="prod-materials__material">Aluminum</button>
+                            <button class="prod-materials__material selected">
+                                <img class="prod-materials__icon" src="http://placehold.it/50" alt="">
+                                Fiberglass
+                            </button>
+                            <button class="prod-materials__material">
+                                <img class="prod-materials__icon" src="http://placehold.it/50" alt="">
+                                Wood
+                            </button>
+                            <button class="prod-materials__material">
+                                <img class="prod-materials__icon" src="http://placehold.it/50" alt="">
+                                Composite
+                            </button>
+                            <button class="prod-materials__material">
+                                <img class="prod-materials__icon" src="http://placehold.it/50" alt="">
+                                Vinyl
+                            </button>
+                            <button class="prod-materials__material">
+                                <img class="prod-materials__icon" src="http://placehold.it/50" alt="">
+                                Aluminum
+                            </button>
                         </div>
                         <h1 class="prod-materials__title">Fiberglass</h1>
                         <p class="prod-materials__description">

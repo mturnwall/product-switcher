@@ -27,11 +27,23 @@ module.exports = function () {
                     }
                 },
                 {
+                    test: /\.vue$/,
+                    loader: 'vue-loader',
+                    options: {
+                        esModule: false,
+                    },
+                },
+                {
                     test: /\.js$/,
                     exclude: /node_modules/,
                     loader:  'babel-loader',
                 },
             ],
+        },
+        resolve: {
+            alias: {
+                'vue$': 'vue/dist/vue.esm.js',
+            }
         },
         plugins: [
             new AssetsPlugin({

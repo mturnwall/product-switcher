@@ -5,5 +5,8 @@
   "extends": "mirum",
   "parserOptions": {
     "table": true
-  }
+  },
+  "rules": {
+    "no-new": "off"
+   }
 }
