@@ -32,7 +32,6 @@ export default {
             const left = el.offsetLeft;
             const width = el.offsetWidth;
             const pointer = document.querySelector('.prod-tabs__pointer');
-            console.log(`'translate3d(${left + (width / 2)}px, 0, 0)'`);
             pointer.style.transform = `translate3d(${left + (width / 2)}px, 0, 0)`;
         },
         switchProduct(evt) {
