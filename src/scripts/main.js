@@ -1,18 +1,12 @@
 import Vue from 'vue';
-import prodTabs from './components/prod.tabs.vue';
-
+import App from './app.vue';
 
 new Vue({
     el: '.prod-switcher',
-    data: {
-        products: {
-            windows: ['Double-hung', 'Slider', 'Casement', 'Hopper', 'Awning'],
-            doors: ['Entry', 'Hinged Patio', 'Sliding Patio'],
-        },
-    },
+    template: '<App/>',
     components: {
-        prodTabs,
-    },
+        App,
+    }
 });
 
 // this tells webpack this file is available for HMR

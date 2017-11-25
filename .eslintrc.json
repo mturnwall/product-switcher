@@ -7,6 +7,11 @@
     "table": true
   },
   "rules": {
-    "no-new": "off"
+    "no-new": "off",
+    "dot-location": ["error", "property"],
+    "arrow-parens": ["error", "as-needed"],
+    "object-curly-newline": ["error", {
+      "minProperties": 1
+    }]
    }
 }

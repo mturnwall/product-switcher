@@ -14,7 +14,7 @@
         height: 2px;
         background-color: #00467c;
     }
-    &::after {
+    &__pointer {
         content: '';
         position: absolute;
         bottom: 4px;
@@ -25,7 +25,7 @@
         border-width: 0 5px 8.7px 5px;
         border-color: transparent transparent #00467c transparent;
         transform: translate3d(58px, 0, 0);
-        transition: transform 300ms $easeOutCirc;
+        transition: transform 500ms $easeOutCirc;
 
     }
     &__group {
