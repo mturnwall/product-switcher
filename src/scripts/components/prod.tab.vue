@@ -16,7 +16,7 @@
             <h2 class="prod-tab__subtitle">Popular Materials</h2>
             <section class="prod-materials">
                 <div class="prod-materials__list">
-                    <button v-for="(material, index) in materials.Content" class="prod-materials__material" @click="changeProduct">
+                    <button v-for="(material, index) in materials.Content" class="prod-materials__material" :class="{'is-selected': selectedIndex === index}" :data-index="index" @click="changeMaterial">
                         <img class="prod-materials__icon" :src="material.ProductMaterialIcon" alt="">
                         {{material.ProductMaterialIconTitle}}
                     </button>
@@ -37,17 +37,24 @@ export default {
         return {
             materialsTitle: '',
             materialsDescription: '',
+            selectedIndex: 0,
         };
     },
     watch: {
         materials() {
-            this.materialsTitle = this.materials.Content[0].Title;
-            this.materialsDescription = this.materials.Content[0].ProductMaterialDescription;
+            this.selectedIndex = 0;
+            this.updateMaterialContent();
         }
     },
     methods: {
-        changeProduct(evt) {
-
+        updateMaterialContent() {
+            this.materialsTitle = this.materials.Content[this.selectedIndex].Title;
+            this.materialsDescription = this.materials.Content[this.selectedIndex].ProductMaterialDescription;
+        },
+        changeMaterial(evt) {
+            const index = evt.target.dataset.index;
+            this.selectedIndex = Number(index);
+            this.updateMaterialContent();
         }
     }
 }

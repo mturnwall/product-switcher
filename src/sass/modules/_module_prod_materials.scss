@@ -29,7 +29,12 @@
             transform: scale(0.7);
             transition: transform 300ms $easeOutBack;
         }
-        &.selected {
+
+        &:hover, &.is-selected {
+            color: $color-regal-blue;
+        }
+        &.is-selected {
+            font-weight: 700;
 
             &::after {
                 transform: scale(1);
@@ -49,5 +54,6 @@
     }
     &__description {
         margin-left: 3px;
+        line-height: 1.4;
     }
 }
