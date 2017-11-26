@@ -3,13 +3,15 @@
 
     &__list {
         display: grid;
-        grid-template-columns: repeat(5, 70px);
+        grid-template-columns: repeat(5, 83px);
         grid-gap: 10px;
         margin-bottom: 20px;
     }
     &__material {
         @include reset-button;
-        @include font-size(14);
+        @include font-size(16);
+        font-weight: 500;
+        color: $color-cerulean;
         text-align: center;
         cursor: pointer;
         position: relative;
@@ -18,7 +20,7 @@
             content: '';
             position: absolute;
             top: -6px;
-            left: 6px;
+            left: 13px;
             z-index: 1;
             border: 3px solid $color-regal-blue;
             border-radius: 50%;
@@ -43,5 +45,9 @@
     }
     &__title {
         @include heading-2;
+        margin-left: 3px;
+    }
+    &__description {
+        margin-left: 3px;
     }
 }

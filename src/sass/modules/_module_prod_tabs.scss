@@ -2,8 +2,8 @@
     display: grid;
     grid-template-columns: repeat(9, 1fr);
     position: relative;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
+    margin-bottom: 50px;
+    padding-bottom: 30px;
 
     &::before {
         content: '';
@@ -42,6 +42,7 @@
     }
     &__tab {
         @include font-size(12);
+        font-family: $font-family-sans;
         border: 0;
         background: #fff;
         display: inline-block;
