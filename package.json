@@ -10,7 +10,8 @@
     "cssMain": "master",
     "jsOut": "dist/js",
     "copyDirs": [
-      "fonts"
+      "fonts",
+      "assets"
     ]
   },
   "dependencies": {

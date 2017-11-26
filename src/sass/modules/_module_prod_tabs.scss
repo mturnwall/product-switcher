@@ -23,7 +23,7 @@
         height: 0;
         border-style: solid;
         border-width: 0 5px 8.7px 5px;
-        border-color: transparent transparent #00467c transparent;
+        border-color: transparent transparent $color-regal-blue transparent;
         transform: translate3d(58px, 0, 0);
         transition: transform 500ms $easeOutCirc;
 
@@ -41,15 +41,25 @@
         }
     }
     &__tab {
-        border: 1px solid #ccc;
-        border-right: 0;
+        @include font-size(12);
+        border: 0;
         background: #fff;
         display: inline-block;
         margin: 0;
-        height: 50px;
+        color: $color-cerulean;
+        text-align: center;
+        transition: all 300ms $easeOutCirc;
 
-        &:last-child {
-            border-right: 1px solid #ccc;
+        &:hover, &.selected {
+            color: $color-regal-blue;
+        }
+        &.selected {
+            font-weight: 700;
+        }
+        img {
+            display: block;
+            margin: 0 auto 5px;
+
         }
     }
 }
