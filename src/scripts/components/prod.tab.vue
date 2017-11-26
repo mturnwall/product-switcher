@@ -16,30 +16,14 @@
             <h2 class="prod-tab__subtitle">Popular Materials</h2>
             <section class="prod-materials">
                 <div class="prod-materials__list">
-                    <button class="prod-materials__material selected">
-                        <img class="prod-materials__icon" src="http://placehold.it/50" alt="">
-                        Fiberglass
-                    </button>
-                    <button class="prod-materials__material">
-                        <img class="prod-materials__icon" src="http://placehold.it/50" alt="">
-                        Wood
-                    </button>
-                    <button class="prod-materials__material">
-                        <img class="prod-materials__icon" src="http://placehold.it/50" alt="">
-                        Composite
-                    </button>
-                    <button class="prod-materials__material">
-                        <img class="prod-materials__icon" src="http://placehold.it/50" alt="">
-                        Vinyl
-                    </button>
-                    <button class="prod-materials__material">
-                        <img class="prod-materials__icon" src="http://placehold.it/50" alt="">
-                        Aluminum
+                    <button v-for="(material, index) in materials.Content" class="prod-materials__material" :class="{'is-selected': selectedIndex === index}" :data-index="index" @click="changeMaterial">
+                        <img class="prod-materials__icon" :src="material.ProductMaterialIcon" alt="">
+                        {{material.ProductMaterialIconTitle}}
                     </button>
                 </div>
-                <h1 class="prod-materials__title">Fiberglass</h1>
+                <h1 class="prod-materials__title">{{materialsTitle}}</h1>
                 <p class="prod-materials__description">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque consequuntur, cumque debitis dicta dolor doloremque et ex fugit illo ipsa ipsum laudantium maxime mollitia obcaecati qui recusandae rem sunt voluptate.
+                    {{materialsDescription}}
                 </p>
             </section>
         </div>
@@ -48,6 +32,30 @@
 
 <script>
 export default {
-    props: ['title', 'description'],
+    props: ['title', 'description', 'materials'],
+    data() {
+        return {
+            materialsTitle: '',
+            materialsDescription: '',
+            selectedIndex: 0,
+        };
+    },
+    watch: {
+        materials() {
+            this.selectedIndex = 0;
+            this.updateMaterialContent();
+        }
+    },
+    methods: {
+        updateMaterialContent() {
+            this.materialsTitle = this.materials.Content[this.selectedIndex].Title;
+            this.materialsDescription = this.materials.Content[this.selectedIndex].ProductMaterialDescription;
+        },
+        changeMaterial(evt) {
+            const index = evt.target.dataset.index;
+            this.selectedIndex = Number(index);
+            this.updateMaterialContent();
+        }
+    }
 }
 </script>

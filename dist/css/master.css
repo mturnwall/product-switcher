@@ -123,10 +123,14 @@ ul, ol {
   list-style-type: none;
 }
 
-.wrapper {
-  font-size: 0.875rem;
-  font-family: Helvetica, Arial, sans-serif;
+body {
+  font-size: 1rem;
+  font-family: "Raleway", sans-serif;
   line-height: 1.2;
+  color: #393939;
+}
+
+.wrapper {
   margin: 20px auto;
   max-width: 1200px;
 }
@@ -135,8 +139,8 @@ ul, ol {
   display: grid;
   grid-template-columns: repeat(9, 1fr);
   position: relative;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
+  margin-bottom: 50px;
+  padding-bottom: 30px;
 }
 
 .prod-tabs::before {
@@ -182,28 +186,43 @@ ul, ol {
 }
 
 .prod-tabs__tab {
-  border: 1px solid #ccc;
-  border-right: 0;
+  font-size: 0.75rem;
+  font-family: "Raleway", sans-serif;
+  border: 0;
   background: #fff;
   display: inline-block;
   margin: 0;
-  height: 50px;
+  color: #00b4e4;
+  text-align: center;
+  -webkit-transition: all 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: all 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-.prod-tabs__tab:last-child {
-  border-right: 1px solid #ccc;
+.prod-tabs__tab:hover, .prod-tabs__tab.is-selected {
+  color: #00467c;
+}
+
+.prod-tabs__tab.is-selected {
+  font-weight: 700;
+}
+
+.prod-tabs__tab img {
+  display: block;
+  margin: 0 auto 5px;
 }
 
 .prod-tab {
   display: grid;
   grid-template-columns: 40% 60%;
-  grid-template-rows: 20%;
+  grid-template-rows: 10%;
   grid-gap: 20px;
 }
 
 .prod-tab__image {
   grid-column: 1;
   grid-row: 1 / span 2;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .prod-tab__image img {
@@ -218,8 +237,9 @@ ul, ol {
   grid-row: 1;
 }
 
-.prod-tab_description {
+.prod-tab__description {
   margin-bottom: 20px;
+  line-height: 1.4;
 }
 
 .prod-tab__options {
@@ -228,15 +248,15 @@ ul, ol {
 }
 
 .prod-tab__title {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 700;
-  margin-bottom: 5px;
+  margin-bottom: 20px;
 }
 
 .prod-tab__subtitle {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 700;
-  margin-bottom: 5px;
+  margin-bottom: 20px;
 }
 
 .prod-materials {
@@ -245,19 +265,21 @@ ul, ol {
 
 .prod-materials__list {
   display: grid;
-  grid-template-columns: repeat(5, 70px);
+  grid-template-columns: repeat(5, 83px);
   grid-gap: 10px;
   margin-bottom: 20px;
 }
 
 .prod-materials__material {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: "Raleway", sans-serif;
   background-color: transparent;
   border: 0;
   padding: 0;
   cursor: pointer;
   outline: none;
-  font-size: 0.875rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #00b4e4;
   text-align: center;
   cursor: pointer;
   position: relative;
@@ -266,31 +288,51 @@ ul, ol {
 .prod-materials__material::after {
   content: '';
   position: absolute;
-  top: -1px;
-  left: 9px;
-  border: 1px solid #c9c9c9;
+  top: -6px;
+  left: 13px;
+  z-index: 1;
+  border: 3px solid #00467c;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  width: 52px;
+  height: 52px;
+  -webkit-transform: scale(0.7);
+          transform: scale(0.7);
   -webkit-transition: -webkit-transform 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transition: -webkit-transform 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transition: transform 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transition: transform 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275), -webkit-transform 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.prod-materials__material.selected::after {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
+.prod-materials__material:hover, .prod-materials__material.is-selected {
+  color: #00467c;
+}
+
+.prod-materials__material.is-selected {
+  font-weight: 700;
+}
+
+.prod-materials__material.is-selected::after {
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 .prod-materials__icon {
   display: block;
   border-radius: 50%;
   margin: 0 auto 15px auto;
+  position: relative;
+  z-index: 2;
 }
 
 .prod-materials__title {
-  font-size: 1.125rem;
-  margin-bottom: 5px;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 15px;
+  margin-left: 3px;
+}
+
+.prod-materials__description {
+  margin-left: 3px;
+  line-height: 1.4;
 }
 /*# sourceMappingURL=master.css.map */

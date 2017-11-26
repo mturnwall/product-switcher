@@ -1,7 +1,7 @@
 <template>
     <div class="prod-switcher">
         <prod-tabs :products="products.Tabs" @switch-product="switchProduct"></prod-tabs>
-        <prod-tab :title="productTitle" :description="productDescription"></prod-tab>
+        <prod-tab :title="productTitle" :description="productDescription" :materials="materials"></prod-tab>
     </div>
 </template>
 
@@ -20,6 +20,7 @@ export default {
             },
             productTitle: '',
             productDescription: '',
+            materials: {},
         };
     },
     mounted() {
@@ -35,11 +36,13 @@ export default {
                     this.products = data;
                     this.productTitle = data.Tabs.Windows.TabItems[0].Title;
                     this.productDescription = data.Tabs.Windows.TabItems[0].Description;
+                    this.materials = data.Materials.Windows;
                 });
         },
         switchProduct(product) {
             this.productTitle = product.Title;
             this.productDescription = product.Description;
+            this.materials = this.products.Materials[product.MaterialsKey];
         }
     },
     components: {

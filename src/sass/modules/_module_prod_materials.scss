@@ -3,13 +3,15 @@
 
     &__list {
         display: grid;
-        grid-template-columns: repeat(5, 70px);
+        grid-template-columns: repeat(5, 83px);
         grid-gap: 10px;
         margin-bottom: 20px;
     }
     &__material {
         @include reset-button;
-        @include font-size(14);
+        @include font-size(16);
+        font-weight: 500;
+        color: $color-cerulean;
         text-align: center;
         cursor: pointer;
         position: relative;
@@ -17,18 +19,25 @@
         &::after {
             content: '';
             position: absolute;
-            top: -1px;
-            left: 9px;
-            border: 1px solid #c9c9c9;
+            top: -6px;
+            left: 13px;
+            z-index: 1;
+            border: 3px solid $color-regal-blue;
             border-radius: 50%;
-            width: 50px;
-            height: 50px;
+            width: 52px;
+            height: 52px;
+            transform: scale(0.7);
             transition: transform 300ms $easeOutBack;
         }
-        &.selected {
+
+        &:hover, &.is-selected {
+            color: $color-regal-blue;
+        }
+        &.is-selected {
+            font-weight: 700;
 
             &::after {
-                transform: scale(1.2);
+                transform: scale(1);
             }
         }
     }
@@ -36,8 +45,15 @@
         display: block;
         border-radius: 50%;
         margin: 0 auto 15px auto;
+        position: relative;
+        z-index: 2;
     }
     &__title {
         @include heading-2;
+        margin-left: 3px;
+    }
+    &__description {
+        margin-left: 3px;
+        line-height: 1.4;
     }
 }

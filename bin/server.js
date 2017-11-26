@@ -61,6 +61,7 @@ async function startServer(options = []) {
                 });
             });
             app.use(express.static('dist'));
+            app.use(express.static('src'));
             if (env === 'dev') {
                 app.use(webpackMiddleware(compiler, {
                     publicPath: config.output.publicPath,

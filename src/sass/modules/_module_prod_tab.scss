@@ -1,12 +1,14 @@
 .prod-tab {
     display: grid;
     grid-template-columns: 40% 60%;
-    grid-template-rows: 20%;
+    grid-template-rows: 10%;
     grid-gap: 20px;
 
     &__image {
         grid-column: 1;
         grid-row: 1 / span 2;
+        border-radius: 10px;
+        overflow: hidden;
 
         img {
             display: block;
@@ -19,8 +21,9 @@
         grid-column: 2;
         grid-row: 1;
     }
-    &_description {
+    &__description {
         margin-bottom: 20px;
+        line-height: 1.4;
     }
     &__options {
         grid-column: 2;
