@@ -1,16 +1,18 @@
 <template>
     <div class="prod-tabs">
-        <div class="prod-tabs__group prod-tabs__group--windows">
+        <section class="prod-tabs__group prod-tabs__group--windows">
+            <h1 class="prod-tabs__title">{{windows.Header}}</h1>
             <button v-for="(window, index) in windows.TabItems" class="prod-tabs__tab" :class="{'is-selected': (selectedType === 'Windows' && selectedIndex === index)}" data-prod-type="Windows" :data-index="index" @click="switchProduct">
                 <img :src="window.HeaderIcon" :alt="(`${window.HeaderIconTitle} icon`)">
                 {{window.HeaderIconTitle}}</button>
-        </div>
-        <div class="prod-tabs__group prod-tabs__group--doors">
+        </section>
+        <section class="prod-tabs__group prod-tabs__group--doors">
+            <h1 class="prod-tabs__title">{{doors.Header}}</h1>
             <button v-for="(door, index) in doors.TabItems" class="prod-tabs__tab" :class="{'is-selected': (selectedType === 'Doors' && selectedIndex === index)}" data-prod-type="Doors" :data-index="index" @click="switchProduct">
                 <img :src="door.HeaderIcon" :alt="(`${door.HeaderIconTitle} icon`)">
                 {{door.HeaderIconTitle}}
             </button>
-        </div>
+        </section>
         <div class="prod-tabs__pointer"></div>
     </div>
 </template>

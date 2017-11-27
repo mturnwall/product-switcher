@@ -8,3 +8,18 @@ body {
     margin: 20px auto;
     max-width: 1200px;
 }
+.prod-switcher {
+
+    &__header {
+        margin-bottom: 50px;
+    }
+    &__title {
+        @include font-size(32);
+        font-weight: 700;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    &__description {
+        text-align: center;
+    }
+}

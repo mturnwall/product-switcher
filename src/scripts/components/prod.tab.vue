@@ -9,7 +9,7 @@
         </section>
 
         <div class="prod-tab__image">
-            <img src="http://placehold.it/400" alt="">
+            <img :src="productImage" alt="">
         </div>
 
         <div class="prod-tab__options">
@@ -32,24 +32,30 @@
 
 <script>
 export default {
-    props: ['title', 'description', 'materials'],
+    props: ['title', 'description', 'materials', 'productImages'],
     data() {
         return {
             materialsTitle: '',
             materialsDescription: '',
+            productImage: '',
             selectedIndex: 0,
         };
     },
     watch: {
         materials() {
+            console.log('materials');
             this.selectedIndex = 0;
             this.updateMaterialContent();
-        }
+        },
+        productImages() {
+            this.productImage = this.productImages[this.materialsTitle];
+        },
     },
     methods: {
         updateMaterialContent() {
             this.materialsTitle = this.materials.Content[this.selectedIndex].Title;
             this.materialsDescription = this.materials.Content[this.selectedIndex].ProductMaterialDescription;
+            this.productImage = this.productImages[this.materialsTitle];
         },
         changeMaterial(evt) {
             const index = evt.target.dataset.index;

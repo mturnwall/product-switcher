@@ -28,8 +28,13 @@
         transition: transform 500ms $easeOutCirc;
 
     }
+    &__title {
+        font-weight: 500;
+        grid-column: 1 / -1;
+    }
     &__group {
         display: grid;
+        grid-row-gap: 20px;
 
         &--windows {
             grid-template-columns: repeat(5, 1fr);
@@ -50,6 +55,7 @@
         color: $color-cerulean;
         text-align: center;
         transition: all 300ms $easeOutCirc;
+        cursor: pointer;
 
         &:hover, &.is-selected {
             color: $color-regal-blue;
