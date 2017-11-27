@@ -58,7 +58,7 @@ export default {
             this.productImage = this.productImages[this.materialsTitle];
         },
         changeMaterial(evt) {
-            const index = evt.target.dataset.index;
+            const index = evt.currentTarget.dataset.index;
             this.selectedIndex = Number(index);
             this.updateMaterialContent();
         }

@@ -48,10 +48,11 @@ export default {
             pointer.style.transform = `translate3d(${left + (width / 2)}px, 0, 0)`;
         },
         switchProduct(evt) {
-            const index = evt.target.dataset.index;
-            const type = evt.target.dataset.prodType;
+            const button = evt.currentTarget;
+            const index = button.dataset.index;
+            const type = button.dataset.prodType;
             this.$emit('switch-product', this.products[type].TabItems[index]);
-            this.movePointer(evt.target);
+            this.movePointer(button);
             this.selectedType = type;
             this.selectedIndex = Number(index);
         },
