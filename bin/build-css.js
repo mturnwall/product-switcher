@@ -23,7 +23,7 @@ function compileSass() {
 }
 
 function processCss(css) {
-    const processor = postcss([autoprefixer]);
+    const processor = postcss([autoprefixer({grid: true})]);
     processor.process(css.css, {
             from: `./src/sass/${sassFilename}.scss`,
             to: `${cssDir}/master.css`,
