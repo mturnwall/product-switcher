@@ -17,12 +17,13 @@
 }
 
 @mixin heading() {
-    @include font-size(24);
+    @include font-size(20);
     font-weight: 700;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
 }
 
 @mixin heading-2() {
-    @include font-size(18);
-    margin-bottom: 5px;
+    @include font-size(16);
+    font-weight: 500;
+    margin-bottom: 15px;
 }
