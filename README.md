@@ -1,37 +1,7 @@
-## Welcome to GitHub Pages
+# Vue.js Product Switcher
 
-You can use the [editor on GitHub](https://github.com/mturnwall/product-switcher/edit/gh-pages/README.md) to maintain and preview the content for your website in Markdown files.
+Just a project to help learn Vue.js better. It's just a basic product switcher like the ones you see on sites where there are different versions of products such as different colors.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+I wanted to see if Vue.js could be used along with another static template system. I used [nunjucks](https://mozilla.github.io/nunjucks/) for template system. I did this because I wanted to see how hard it would be to add Vue.js to an existing site to be used to handle parts or a certain UI feature of a site.
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/mturnwall/product-switcher/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+The demo can be [seen here](http://projects.turnwall.net/product-switcher/dist/)
