@@ -7,6 +7,7 @@ module.exports = function () {
     return {
         context: path.resolve(__dirname, './src/scripts'),
         entry: [
+            'whatwg-fetch',
             './main.js',
         ],
         output: {
