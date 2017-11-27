@@ -1,5 +1,9 @@
+import 'whatwg-fetch';
 import Vue from 'vue';
 import App from './app.vue';
+import es6Promise from 'es6-promise';
+
+es6Promise.polyfill();
 
 new Vue({
     el: '.prod-switcher',
