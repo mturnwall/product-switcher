@@ -22,6 +22,9 @@ export default {
             products: {
                 Tabs: {},
             },
+            routeType: '',
+            routeProd: '',
+            routeMaterial: '',
             productTitle: '',
             productDescription: '',
             materials: {},
@@ -29,20 +32,33 @@ export default {
         };
     },
     mounted() {
+        if (window.location.hash) {
+            const hash = window.location.hash.substr(1);
+            const routePieces = hash.split(':');
+            this.routeType =  this.capitalize(routePieces[0]);
+            this.routeProd = this.capitalize(routePieces[1]);
+            this.routeMaterial = this.capitalize(routePieces[2]);
+        }
         this.$nextTick(() => {
             this.getData();
         });
     },
     methods: {
+        capitalize(str) {
+            return `${str.charAt(0).toUpperCase()}${str.slice(1)}`;
+        },
         getData() {
             fetch(apiUrl)
                 .then(response => response.json())
                 .then(data => {
                     this.products = data;
-                    this.productTitle = data.Tabs.Windows.TabItems[0].Title;
-                    this.productDescription = data.Tabs.Windows.TabItems[0].Description;
-                    this.productImages = data.ProductImages[data.Tabs.Windows.TabItems[0].Id];
-                    this.materials = data.Materials.Windows;
+                    let type = (this.routeType !== '' && this.routeType in data.Tabs) ? this.routeType : 'Windows';
+
+                    let tabData = data.Tabs[type].TabItems.filter(tab => this.routeProd === tab.Id)[0];
+                    if (typeof tabData === 'undefined') {
+                        tabData = data.Tabs[type].TabItems[0];
+                    }
+                    this.switchProduct(tabData);
                 });
         },
         switchProduct(product) {
